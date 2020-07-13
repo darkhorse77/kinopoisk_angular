@@ -1,0 +1,26 @@
+.page-wrapper {
+    background: #eef5f9;
+    position: relative;
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .page-wrapper {
+        max-width: 992px;
+        margin: 0 auto;
+        position: relative;
+    }
+}
+
+.header {
+    margin-bottom: 20px;
+    width: 100%;
+    color: #000;
+    text-align: center;
+}
+
+.poster-mock {
+    width: 30px;
+    height: 45px;
+    display: inline-block;
+}

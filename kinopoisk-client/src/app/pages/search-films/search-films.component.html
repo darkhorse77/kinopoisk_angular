@@ -1,0 +1,38 @@
+<ng-template #rt let-r="result" let-t="term">
+    <img *ngIf="r.Poster != 'N/A'" [src]="r.Poster" width="30px">&nbsp;
+    <ngb-highlight [highlightClass]="'text-danger'" [result]="r.Title" [term]="t">
+    </ngb-highlight>
+    <span class="text-secondary p-l-10">&nbsp; {{r.Year}}</span>
+</ng-template>
+
+<div class="row">
+    <div class="col-12">
+        <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search by movie, series or game name" [(ngModel)]="searchString"
+                (selectItem)="selectedItem($event)" [ngbTypeahead]="searchTypehead()"
+                [resultTemplate]="rt" minlength="5">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="search()">Search</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row films-list" *ngIf="films">
+    <div class="col-md-4" *ngFor="let f of films">
+        <div class="card card-body film-info h-100">
+            <div class="row">
+                <div class="col-4"><img *ngIf="f.Poster != 'N/A'" [src]="f.Poster" width="60px"></div>
+                <div class="col-8">
+                    <div><a [routerLink]="f.imdbID" class="film-title">{{f.Title}}</a></div>
+                    <div class="text-secondary">{{f.Year}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center mt-5">
+        <h5 *ngIf="!searchString">Start typing in the search bar to see the results</h5>
+        <h5 *ngIf="searchFailed">No results were found for "{{searchString}}"</h5>
+    </div>
+</div>

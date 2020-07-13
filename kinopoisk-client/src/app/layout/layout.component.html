@@ -1,0 +1,27 @@
+
+<div class="page-wrapper">
+    <header class="header">
+        <div class="row">
+            <div class="col text-left">
+              <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-primary" ngbDropdownToggle>Watching history</button>
+                <div ngbDropdownMenu>
+                  <div *ngIf="watchingHistory.length">
+                    <div *ngFor="let r of watchingHistory" class="text-nowrap px-3 d-flex align-items-center pb-1">
+                        <img *ngIf="r.Poster != 'N/A'" [src]="r.Poster" width="30px">
+                        <div class="poster-mock" *ngIf="r.Poster == 'N/A'"></div>
+                        &nbsp;
+                        <a [routerLink]="'/films/' + r.imdbID">{{r.Title}}</a>
+                        <span class="text-secondary p-l-10">&nbsp; {{r.Year}}</span>
+                      </div>
+                  </div>
+                  <div class="text-center text-secondary" *ngIf="!watchingHistory.length">
+                    History clear.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </header>
+    <router-outlet></router-outlet>
+</div>

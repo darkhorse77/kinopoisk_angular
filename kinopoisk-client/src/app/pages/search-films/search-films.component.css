@@ -1,0 +1,50 @@
+.films-list {
+    margin-top: 20px;
+    flex: 1 1;
+}
+
+.films-list .col-md-4 {
+    margin-bottom: 20px;
+}
+
+.film-info:hover {
+    transition: 0.2s;
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 14px 24px rgba(62,57,107,.1);
+}
+
+.film-title {
+    color: black;
+}
+
+::ng-deep .typehead .dropdown-item {
+    border-bottom: 1px solid #eee;
+    white-space: normal;
+}
+
+::ng-deep .typehead .dropdown-item.active{
+    background-color: #e8f5ff;
+    color: black;
+}
+
+
+::ng-deep .dropdown-item.active{
+    background-color: #e8f5ff;
+    color: black;
+}
+
+::ng-deep .dropdown-item {
+    font-size: 15px;
+}
+
+
+::ng-deep .dropdown-item:focus{
+    border-color: #66ccff;
+    background-color: #ebf8ff;
+    color: black;
+}
+
+::ng-deep .dropdown-item:hover {
+    background-color: #ebf8ff;
+    color: black;
+}

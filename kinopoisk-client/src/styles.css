@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    background: #eef5f9;
+}
+
+/* по непонятным мне причинам эти классы не работают сами и вместо того чтобы тратить время на поиск проблемы в бутстрапе я написал их тут */
+.m-t-20 {
+    margin-top: 20px;
+}

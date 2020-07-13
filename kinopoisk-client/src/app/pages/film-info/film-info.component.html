@@ -1,0 +1,36 @@
+<a href="/">Back to search</a>
+<div class="row m-t-20" *ngIf="film">
+    <div class="col-sm-4 mb-3">
+        <img *ngIf="film.Poster != 'N/A'" [src]="film.Poster" class="w-100">
+        <div class="mt-3" *ngIf="film.Ratings.length">
+            <div>
+                <b>Ratings:</b>
+            </div>
+            <div *ngFor="let r of film.Ratings">
+                <i>{{r.Source}}</i> - {{r.Value}}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 mb-3">
+        <h2>{{film.Title}}</h2> 
+        <span class="text-secondary">{{film.Year}}, {{film.Genre}}</span>
+        <div class="m-t-20">
+            <blockquote class="blockquote">
+                <p class="mb-0">{{film.Plot}}</p>
+              </blockquote>
+        </div>
+        <div>
+            <div><b>Country:</b> {{film.Country}}</div>
+            <div><b>Language:</b> {{film.Language}}</div>
+            <div><b>Released:</b> {{film.Released}}</div>
+            <div><b>Type:</b> <span class="text-capitalize">{{film.Type}}</span></div>
+            <div><b>Rating IMDB:</b> {{film.imdbRating}}</div>
+            <div><b>Votes IMDB:</b> {{film.imdbVotes}}</div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="mb-2"><b>Director:</b> <div>{{film.Director}}</div></div>
+        <div class="mb-2"><b>Writer:</b> <div>{{film.Writer}}</div></div>
+        <div class="mb-2"><b>Actors:</b> <div>{{film.Actors}}</div></div>
+    </div>
+</div>
